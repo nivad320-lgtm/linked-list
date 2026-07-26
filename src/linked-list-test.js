@@ -132,7 +132,24 @@ class LinkedList {
         myString += `null`
         return myString
     }
-}
+    insertAt(index,...values) {
+        // console.log(this.at(indexx))
+        let temp = this.at(index-1)
+        let originalNext = temp.next
+        for (const element of values) {
+            let currentIndex = values.indexOf(element)
+            if (currentIndex === 0) {
+                temp.next = new Node(element)
+            } else if (currentIndex < values.length - 1) {
+                temp = temp.next;
+                temp.next = new Node(element)
+            } else  {
+                temp = temp.next;
+                temp.next = new Node(element, originalNext)
+            }
+        }
+        }
+    }
 
 class Node {
     constructor(value, next) {
