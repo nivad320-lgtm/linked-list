@@ -25,5 +25,8 @@ console.log(list.contains('my'))
 console.log(list.findIndex('123123my'))
 console.log(list.at(2));
 console.log(list.toString())
-list.insertAt(1,10,11)
+list.insertAt(3,10,11)
 console.log(list.toString())
+console.log(list.removeAt(4))
+console.log(list.toString())
+
